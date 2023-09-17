@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import {breweryList} from "../data/list";
+---
+
+<Layout title="찾아가는 양조장">
+    <h1>양조장 찾아가자</h1>
+    <p>{breweryList.data.map((brewery) => brewery.대표자)}</p>
+
+</Layout>
+
+<style>
+</style>
