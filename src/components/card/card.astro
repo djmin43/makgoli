@@ -8,7 +8,7 @@ const { place } = Astro.props;
 ---
 <div class="card-container">
     <div class="name-container">
-        <p>{place.name}</p>
+        <p class="name">{place.name}</p>
     </div>
     <div class="description-container">
         <div class="row-container">
@@ -36,6 +36,7 @@ const { place } = Astro.props;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         padding: 16px;
         border: 1px solid lightgray;
     }
@@ -44,25 +45,28 @@ const { place } = Astro.props;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80px;
-        width: 80px;
         text-align: center;
-        padding: 8px;
+        padding: 16px;
+        .name {
+            font-size: 18px;
+            font-weight: 700;
+        }
     }
 
     .description-container {
         margin-left: 32px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
         gap: 8px;
+        width: 100%;
     }
 
     .row-container {
         display: flex;
     }
     .label {
-        width: 60px;
         font-weight: 700;
         font-size: 14px;
     }

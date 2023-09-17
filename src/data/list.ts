@@ -286,7 +286,7 @@ export const makgoliPlaceList = {
       owner: "하형태",
       selected: "2017",
       founded: "2006",
-      address: "경북 영천시 금호읍 창산길 100-44 (원기리 414-2)",
+      address: "경북 영천시 금호읍 창산길\n 100-44 (원기리 414-2)",
       name: "한국와인",
       category: "과실주",
       description:
