@@ -1,4 +1,4 @@
-export const breweryList = {
+export const makgoliList = {
     "data": [
         {
             "owner": "김동교",
