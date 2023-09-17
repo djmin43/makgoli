@@ -3,14 +3,12 @@ import {MakgoliPlace} from "../../models";
 interface Props {
     place: MakgoliPlace
 }
-
 const { place } = Astro.props;
 
 ---
 <div>
     <a href={`/place-detail/${place.id}`}>
         <p>{place.name}</p>
-
     </a>
 
 </div>
