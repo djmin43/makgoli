@@ -1,5 +1,6 @@
 ---
 import {getMakgoliPlaceList} from "../../data/list";
+import Layout from "../../layouts/layout.astro";
 export function getStaticPaths() {
     return getMakgoliPlaceList.map((place) => {
         return {
@@ -8,10 +9,82 @@ export function getStaticPaths() {
             }
         }
     })
-
 }
 
 const { place: id } = Astro.params
----
-<p>{id}</p>
+const detailId = Astro.params.place
+const placeDetail = getMakgoliPlaceList.find(place => place.id.toString() === detailId )
 
+---
+
+<Layout title={placeDetail.name}>
+    <div class="place-detail-container">
+        <div>
+            <p class="place-name">{placeDetail.name}</p>
+        </div>
+        <div class="description-container">
+            <p class="description">{placeDetail.description}</p>
+        </div>
+        <div class="detail-container">
+            <div class="detail-row-container">
+                <label class="label">대표자: </label>
+                <p>{placeDetail.owner}</p>
+            </div>
+            <div class="detail-row-container">
+                <label class="label">설립연도: </label>
+                <p>{placeDetail.founded}</p>
+            </div>
+            <div class="detail-row-container">
+                <label class="label">주종: </label>
+                <p>{placeDetail.category}</p>
+            </div>
+            <div class="detail-row-container">
+                <label class="label">주소: </label>
+                <p>{placeDetail.address}</p>
+            </div>
+        </div>
+    </div>
+</Layout>
+<style>
+    .place-detail-container {
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .place-name {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .description-container {
+        max-width: 640px;
+        margin: 16px;
+        .description {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+    .detail-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .detail-row-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .label {
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+
+
+</style>
