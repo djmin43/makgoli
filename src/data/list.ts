@@ -1,4 +1,4 @@
-import type { MakgoliPlace, MakgoliPlaceList } from "../models";
+import type { MakgoliPlace } from "../models";
 
 export const makgoliPlaceList = {
   data: [

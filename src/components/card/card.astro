@@ -6,13 +6,63 @@ interface Props {
 const { place } = Astro.props;
 
 ---
-<div>
-    <a href={`/place-detail/${place.id}`}>
+<div class="card-container">
+    <div class="name-container">
         <p>{place.name}</p>
-    </a>
-
+    </div>
+    <div class="description-container">
+        <div class="row-container">
+            <label class="label">주소: </label>
+            <p>{place.address}</p>
+        </div>
+        <div class="row-container">
+            <label class="label">설립연도: </label>
+            <p>{place.founded}</p>
+        </div>
+        <div class="row-container">
+            <label class="label">대표자: </label>
+            <p>{place.owner}</p>
+        </div>
+        <div class="row-container">
+            <label class="label">주종: </label>
+            <p>{place.category}</p>
+        </div>
+    </div>
 </div>
 
 <style>
 
+    .card-container {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        border: 1px solid lightgray;
+    }
+
+    .name-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        width: 80px;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .description-container {
+        margin-left: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .row-container {
+        display: flex;
+    }
+    .label {
+        width: 60px;
+        font-weight: 700;
+        font-size: 14px;
+    }
 </style>

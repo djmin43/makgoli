@@ -5,9 +5,10 @@ import {getMakgoliPlaceList, } from "../data/list";
 ---
 
 <Layout title="찾아가는 양조장">
-    <h1>양조장 찾아가자</h1>
     {getMakgoliPlaceList.map(place =>
-            <Card place={place} />
+            <a href={`/place-detail/${place.id}`}>
+                <Card place={place} />
+            </a>
     )}
 </Layout>
 

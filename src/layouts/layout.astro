@@ -29,12 +29,20 @@ const { title } = Astro.props;
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW9J4PJV"
 					  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
+	<main>
+		<nav class="main-navbar">
+			<h1 class="header">찾아가는 양조장 리스트</h1>
+		</nav>
 		<slot />
+	</main>
 	</body>
 </html>
 <style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+	}
 	:root {
-
 	}
 	html {
 		font-family:
@@ -46,5 +54,28 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.main-navbar {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		padding: 32px;
+		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	}
+	.header {
+		font-size: 16px;
+	}
+	label, p, span {
+		font-size: 14px;
 	}
 </style>
