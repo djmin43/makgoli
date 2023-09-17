@@ -1,0 +1,17 @@
+---
+import {getMakgoliPlaceList} from "../../data/list";
+export function getStaticPaths() {
+    return getMakgoliPlaceList.map((place) => {
+        return {
+            params: {
+                place:place.id
+            }
+        }
+    })
+
+}
+
+const { place: id } = Astro.params
+---
+<p>{id}</p>
+

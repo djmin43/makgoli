@@ -1,13 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import {makgoliList} from "../data/list";
+import Layout from '../layouts/layout.astro';
+import Card from "../components/card/card.astro";
+import {getMakgoliPlaceList, } from "../data/list";
 ---
 
 <Layout title="찾아가는 양조장">
     <h1>양조장 찾아가자</h1>
-    <p>{makgoliList.data.map((brewery) => brewery.대표자)}</p>
-
+    {getMakgoliPlaceList.map(place =>
+            <Card place={place} />
+    )}
 </Layout>
 
 <style>
